@@ -64,13 +64,16 @@ Notebook - Final_LSTM.ipynb
 
 Initial Issue: Overfitting (Training accuracy 95% but the validation accuracy would reach 40-45% and then decrease)
 Solution:
-a) Used synonym based data augmentation to increase training data.(Utilised wordnet(nltk))
+a) Used synonym based data augmentation to increase training data (Utilised wordnet(nltk))
+
 b) Introduced regularisers.(l1 and l2)
+
 c) Introduced and increased Dropout Rate.(Rate = 0.5)
 
 Validation Split = 0.1
 
 Final accuracy acheived:
 Training = 96%
+
 Validation and Test = 84-86%
 
