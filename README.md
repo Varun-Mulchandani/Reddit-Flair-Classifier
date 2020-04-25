@@ -41,7 +41,7 @@ Notebook - EDA.ipynb
 Matplotlib, Seaborn and Wordcloud were used.
 Takeaway:
 
-1)Most authors, with many submissions, made them with similar flairs.
+1)Most authors, with many submissions, made them with similar flairs. This motivated me to include it in the input sentence along with a seperator.
 
 2)Submissions with flair 'politics' had the highest scores.
 
@@ -76,4 +76,13 @@ Final accuracy acheived:
 Training = 96%
 
 Validation and Test = 84-86%
+
+# Building a web application
+script - final.py
+
+Utilised praw to extract the features of the submission from the URL.
+
+Created helper functions clean() and generate_flair() to predict flair from input features.
+
+For automated testing, helper function extract() was used to extract the urls from the input .txt file.
 
