@@ -75,9 +75,11 @@ The following are the models I have trained on the data. I decided to stick to t
     Validation Split = 0.1
 
     Final accuracy acheived:
-    Training = 96%
+    Training = 97.3%
 
-    Validation and Test = 84-86%
+    Validation = 91.8%
+    
+    Test = 90%
 
 # Building a web application
 script - final.py
