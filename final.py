@@ -81,7 +81,8 @@ def clean(title):
     title = ' '.join(word for word in title.split() if word not in stopword_s)
     return title
 
-#app
+model = pickle.load(open('lstm_model.pkl','rb'))
+model._make_predict_function()
 
 app = Flask(__name__)
 @app.route('/')
@@ -89,14 +90,10 @@ def main():
     return render_template('main.html')
 
 #For displaying predicted value
-@app.route('/predict',methods=['POST'])
+@app.route('/predict',methods=['GET', 'POST'])
 def predict():
-    global model
-    #set_random_seed(2)
-    #seed(1)
     warnings.filterwarnings("ignore")
     warnings.simplefilter(action = 'ignore',category = FutureWarning)
-    model = pickle.load(open('lstm_model.pkl','rb'))
 
     if request.method == 'POST':
         message = request.form['message']
@@ -107,27 +104,27 @@ def predict():
         #my_prediction = generate_flair(title)
         submission = reddit.submission(url = message)
         title = str(submission.title)
-        title = clean(title)
-        my_prediction = generate_flair(title)
-    return render_template('mainresult.html',prediction = my_prediction)
+        author = str(submission.author)
+        #title = clean(title)
+        my_prediction = generate_flair(title + 'SEP' + author)
+    return render_template('main.html',prediction = my_prediction)
 
 #For automated testing
 
 @app.route('/automated_testing', methods=['GET', 'POST'])
 def automated_testing():
-    global model
     file = request.files['file']
     content = file.readlines()
     content = [x.strip() for x in content]
     values = {}
-    model = pickle.load(open('lstm_model.pkl','rb'))
     for x in content:
         x = x.decode()
         id_val = extract(x)
         sub = reddit.submission(id=id_val)
-        title = sub.title
-        title = clean(title)
-        prediction = generate_flair(title)
+        title = str(sub.title)
+        author = str(sub.author)
+        #title = clean(title)
+        prediction = generate_flair(title + 'SEP' +  author)
         values.update({x:prediction})
     return jsonify(values)
     if request.method == 'GET':
