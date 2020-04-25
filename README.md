@@ -41,23 +41,25 @@ Notebook - EDA.ipynb
 Matplotlib, Seaborn and Wordcloud were used.
 Takeaway:
 
-1)Most authors, with many submissions, made them with similar flairs. This motivated me to include it in the input sentence along with a seperator.
+1) Most authors, with many submissions, made them with similar flairs. This motivated me to include it in the input sentence along with a seperator.
 
-2)Submissions with flair 'politics' had the highest scores.
+2) Submissions with flair 'politics' had the highest scores.
 
-3)Initially, each flair had around 200 - 250 submissions making for a well balanced dataset.
+3) Initially, each flair had around 200 - 250 submissions making for a well balanced dataset.
 
-4)Submissions with different flairs had similar character level distributions.
+4) Submissions with different flairs had similar character level distributions.
 
-5)Submissions with each flair had some common words which was visualised using word cloud. For example:
+5) Submissions with each flair had some common words which was visualised using word cloud. For example:
 - Submissions with flair 'Politics' had words 'Government','India','BJP', etc. occuring more often than others.
 
 # Building Models (Training and Testing):
 The following are the models I have trained on the data. I decided to stick to the one which gave the highest accuracy while describing how I overcame the various issues faced.
 
 1)Multi channel CNN
+ - Gave lower training as well as testing accuracy than the Stacked LSTM Model and therefore I decided to discontinue working on this model.
 
 2)BERT - english, uncased(24, 1024, 16)
+ - Gave similar validation accuracy as the initial Stacked LSTM Network but took 1.5 hours for each epoch and therefor I decided to discontinue working on this model.
 
 3)Stacked LSTM Network:
 Notebook - Final_LSTM.ipynb
@@ -87,3 +89,5 @@ Created helper functions clean() and generate_flair() to predict flair from inpu
 For automated testing, helper function extract() was used to extract the urls from the input .txt file.
 
 Results were outputed in json format.
+
+# Deploying the web application on github
