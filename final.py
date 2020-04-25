@@ -123,7 +123,7 @@ def automated_testing():
     model = pickle.load(open('lstm_model.pkl','rb'))
     for x in content:
         x = x.decode()
-        id_val = extract_id(x)
+        id_val = extract(x)
         sub = reddit.submission(id=id_val)
         title = sub.title
         title = clean(title)
