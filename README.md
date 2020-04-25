@@ -86,3 +86,4 @@ Created helper functions clean() and generate_flair() to predict flair from inpu
 
 For automated testing, helper function extract() was used to extract the urls from the input .txt file.
 
+Results were outputed in json format.
