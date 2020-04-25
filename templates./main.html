@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Flair Classifier</title>
-	<link rel="stylesheet" type="text/css" href="/Users/varun/flask-intro/static/style.css">
+	<title>Flair Detector</title>
+	<link rel="stylesheet" type="text/css" href="/static/style.css">
 </head>
 <body>
 
 	<header>
 		<div class="hero">
-		<h2 id="one">Reddit Flair Classifier</h2>
-		<p id="para">Enter the URL to the post</p>
+		<h2 id="one">Reddit Flair Detector</h2>
+		<p id="para">Enter URL</p>
 
 		</div>
 	</header>
 	<div class="ml-container">
-		<div class="container">
-
-
 		<form action="{{ url_for('predict')}}" method="POST">
-		<textarea id="ta" name="message" rows="10" cols="15"></textarea>
+		<textarea id="ta" name="message" rows="1" cols="100"></textarea>
 		<br/>
 	<p>
 
 	</p>
+	</div>
+		<div class="container">
 		<input  type="submit" class="btn-info" value="Predict">
+	</div>
 
 	</form>
-</div>
 
+	<div class="results">
+		<h3 id=res >Result :{{prediction}}</h3>
 	</div>
+
 </body>
 </html>
