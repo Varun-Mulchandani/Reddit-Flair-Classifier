@@ -80,7 +80,7 @@ The following are the models I have trained on the data. I decided to stick to t
     Validation = 91.8%
     
     Test = 90%
-
+Note: For the purpose of security, I have removed the file for now until submission.
 # Building a web application
 script - final.py
 
@@ -92,4 +92,4 @@ For automated testing, helper function extract() was used to extract the urls fr
 
 Results were outputed in json format.
 
-# Deploying the web application on github
+# Deploying the web application on Heroku
