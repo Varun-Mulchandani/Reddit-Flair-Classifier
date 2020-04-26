@@ -101,12 +101,12 @@ After hopping a couple of zones in South, SouthEast, East and Northeast Asia for
 I have shared screenshots of the application running on localhost, along with the execution of the .txt file for automated testing below:
 
 
-![](1.png)
+![](image/1.png)
 
-![](2.png)
+![](image/2.png)
 
-![](3.png)
+![](image/3.png)
 
 Automated Testing:
 
-![](4.png)
+![](image/4.png)
