@@ -93,5 +93,20 @@ For automated testing, helper function extract() was used to extract the urls fr
 Results were outputed in json format.
 
 # Deploying the web application on Heroku
+Could not deploy the application on heroku as it has a slug limit of 500MB whereas my model and tensorflow alone were 63 and 420MB alone. Considering the remaining dependencies the size went up to 550.2MB after removing the redundant ones.
+
+Could not deploy the application on gcp due to "Error Response: [4] Timed out waiting for the app infrastructure to become healthy / ZONE_RESOURCE_POOL_EXHAUSTED ERROR"(https://issuetracker.google.com/issues/73583699)
+After hopping a couple of zones in South, SouthEast, East and Northeast Asia for 5-6 hours as suggested as a plausible solution, it still gave no result.
+
+I have shared screenshots of the application running on localhost, along with the execution of the .txt file for automated testing below:
 
 
+![](1.png)
+
+![](2.png)
+
+![](3.png)
+
+Automated Testing:
+
+![](4.png)
